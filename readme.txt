@@ -1,3 +1,3 @@
 testing git with visual studio
 
-seems convenient 
+seems convenient
