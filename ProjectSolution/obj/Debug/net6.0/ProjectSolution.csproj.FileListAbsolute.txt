@@ -1,0 +1,15 @@
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\bin\Debug\net6.0\ProjectSolution.exe
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\bin\Debug\net6.0\ProjectSolution.deps.json
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\bin\Debug\net6.0\ProjectSolution.runtimeconfig.json
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\bin\Debug\net6.0\ProjectSolution.dll
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\bin\Debug\net6.0\ProjectSolution.pdb
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.csproj.AssemblyReference.cache
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.AssemblyInfoInputs.cache
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.AssemblyInfo.cs
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.csproj.CoreCompileInputs.cache
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.dll
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\refint\ProjectSolution.dll
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.pdb
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ProjectSolution.genruntimeconfig.cache
+D:\Coding\ITE5231 DSA\GroupAssignment\ProjectSolution\obj\Debug\net6.0\ref\ProjectSolution.dll
