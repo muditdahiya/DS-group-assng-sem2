@@ -8,5 +8,9 @@ namespace ProjectSolution
 {
     internal class Menu
     {
+        public Menu()
+        {
+
+        }
     }
 }
