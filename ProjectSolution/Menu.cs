@@ -8,6 +8,5 @@ namespace ProjectSolution
 {
     internal class Menu
     {
-        Console.WriteLine("Hello");
     }
 }
