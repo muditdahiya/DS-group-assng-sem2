@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectSolution
+﻿
+internal class Menu
 {
-    internal class Menu
+    internal static Menu GetInstance()
     {
-        public Menu()
-        {
-
-        }
+        throw new NotImplementedException();
     }
 }

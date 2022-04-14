@@ -1,4 +1,14 @@
 ﻿//MAIN
+
+//tables array with 10 empty tables
+bool[] tables = new bool[10] {false, false, false, false, false, false, false, false, false, false};
+
+//singleton class Menu
+Menu menu = Menu.GetInstance();
+
+//queue of orders
+Queue<Order> orders = new Queue<Order>();
+
 int choice = 0;
 while (choice != 5)
 {
