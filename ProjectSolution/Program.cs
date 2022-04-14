@@ -1,7 +1,7 @@
 ﻿//MAIN
 
 //tables array with 10 empty tables
-bool[] tables = new bool[10] {false, false, false, false, false, false, false, false, false, false};
+Table[] tables = new Table[10];
 
 //singleton class Menu
 Menu menu = Menu.GetInstance();
