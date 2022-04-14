@@ -1,5 +1,5 @@
-﻿
+﻿//use facade here
+
 internal class Bill
 {
-    //use facade here
 }

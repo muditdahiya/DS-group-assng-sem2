@@ -1,7 +1,7 @@
-﻿
+﻿//use stack here
+
 internal class TipJar
 {
-    //use stack here
     public TipJar()
     {
     }

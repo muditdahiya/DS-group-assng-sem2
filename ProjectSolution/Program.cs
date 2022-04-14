@@ -10,7 +10,7 @@ Menu menu = Menu.GetInstance();
 Queue<Order> orders = new Queue<Order>();
 
 int choice = 0;
-while (choice != 5)
+while (choice != -1)
 {
     Console.WriteLine("--------------------------------------------------");
     Console.WriteLine("\n" + "What would you like to do?");
@@ -19,7 +19,7 @@ while (choice != 5)
     Console.WriteLine("2. Checkout customer");
     Console.WriteLine("3. Take order");
     Console.WriteLine("4. Calculate tips");
-    Console.WriteLine("5. Close restaurant for the day");
+    Console.WriteLine("-1. Close restaurant for the day");
 
     Console.Write("\n" + "Enter option: ");
     
@@ -50,7 +50,7 @@ while (choice != 5)
         case 4:
             Console.WriteLine("Calculating tips for the dat");
             break;
-        case 5:
+        case -1:
             Console.WriteLine("Bye");
             break;
         default:

@@ -1,6 +1,6 @@
-﻿
+﻿//use prototype to repeat last order
+
 internal class Order
 {
-    //use prototype to repeat last order
 
 }
