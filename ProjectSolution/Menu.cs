@@ -1,9 +1,12 @@
 ﻿//use singleton here
 
-internal class Menu
+namespace ProjectSolution
 {
-    internal static Menu GetInstance()
+    internal class Menu
     {
-        throw new NotImplementedException();
+        internal static Menu GetInstance()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

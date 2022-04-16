@@ -1,8 +1,11 @@
 ﻿//use stack here
 
-internal class TipJar
+namespace ProjectSolution
 {
-    public TipJar()
+    internal class TipJar
     {
+        public TipJar()
+        {
+        }
     }
 }

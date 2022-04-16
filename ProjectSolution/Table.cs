@@ -1,14 +1,17 @@
 ﻿//keeps track of occupied, order, bill, customer
 
-internal class Table
+namespace ProjectSolution
 {
-    int Number { get; set; }
-    Customer Customer { get; set; }
-    Order Order { get; set; }
-    Bill Bill { get; set; }
-
-    public Table(int n)
+    class Table
     {
-        Number = n;
+        int Number { get; set; }
+        Customer Customer { get; set; }
+        Order Order { get; set; }
+        Bill Bill { get; set; }
+
+        public Table(int n)
+        {
+            Number = n;
+        }
     }
 }

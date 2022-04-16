@@ -1,5 +1,8 @@
 ﻿//use facade here
 
-internal class Bill
+namespace ProjectSolution
 {
+    internal class Bill
+    {
+    }
 }
