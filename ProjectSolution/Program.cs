@@ -1,4 +1,6 @@
-﻿//MAIN
+﻿using ProjectSolution;
+//MAIN
+
 
 //tables array with 10 empty tables
 Table[] tables = new Table[10];

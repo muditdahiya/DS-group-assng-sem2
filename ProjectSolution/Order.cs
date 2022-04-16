@@ -1,6 +1,9 @@
 ﻿//use prototype to repeat last order
 
-internal class Order
+namespace ProjectSolution
 {
+    internal class Order
+    {
 
+    }
 }

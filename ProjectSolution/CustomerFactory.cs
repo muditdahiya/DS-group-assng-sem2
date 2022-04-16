@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//CustomerFactory object should be created in Bill to decide discount amount
+﻿//CustomerFactory object should be created in Bill to decide discount amount
+
 namespace ProjectSolution
 {
     class CustomerFactory
     {
-        public Customer GetCustomer(int age, boolean isStudent)
+        public Customer GetCustomer(int age, bool isStudent)
         {   //if statements to check customer type and redeemable discounts
             if (isStudent)
             {
