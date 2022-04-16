@@ -1,8 +1,9 @@
 ﻿//implement factory here to create different types of customers
-
-internal class Customer
+namespace ProjectSolution
 {
-    public Customer()
+    internal interface Customer
     {
+        public double GetDiscount();
+
     }
 }
