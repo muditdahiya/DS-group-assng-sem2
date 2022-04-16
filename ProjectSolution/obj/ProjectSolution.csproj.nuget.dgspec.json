@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj": {}
+    "/Users/mihir/Developer/humber/Winter2022/DataStructures/FinalAssignment/DS-group-assng-sem2/ProjectSolution/ProjectSolution.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj": {
+    "/Users/mihir/Developer/humber/Winter2022/DataStructures/FinalAssignment/DS-group-assng-sem2/ProjectSolution/ProjectSolution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj",
+        "projectUniqueName": "/Users/mihir/Developer/humber/Winter2022/DataStructures/FinalAssignment/DS-group-assng-sem2/ProjectSolution/ProjectSolution.csproj",
         "projectName": "ProjectSolution",
-        "projectPath": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj",
-        "packagesPath": "C:\\Users\\mudit\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\obj\\",
+        "projectPath": "/Users/mihir/Developer/humber/Winter2022/DataStructures/FinalAssignment/DS-group-assng-sem2/ProjectSolution/ProjectSolution.csproj",
+        "packagesPath": "/Users/mihir/.nuget/packages/",
+        "outputPath": "/Users/mihir/Developer/humber/Winter2022/DataStructures/FinalAssignment/DS-group-assng-sem2/ProjectSolution/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mudit\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mihir/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
