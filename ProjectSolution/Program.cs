@@ -17,7 +17,7 @@ while (choice != -1)
 
     Console.WriteLine("1. New customer"); //create customer and assign to table
     Console.WriteLine("2. Checkout customer"); //generate bill, empty table
-    Console.WriteLine("3. Take order"); //generate order and assign to table
+    Console.WriteLine("3. Take order"); //generate order and assign to customer
     Console.WriteLine("4. Calculate tips"); //sum the TipJar
     Console.WriteLine("-1. Close restaurant for the day"); //can use some facade here
 
