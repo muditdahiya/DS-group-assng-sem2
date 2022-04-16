@@ -4,20 +4,22 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.ProjectSolution PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Order.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ICalculate.cs">
     <Files>
-      <File FileName="Menu.cs" Line="9" Column="1" />
+      <File FileName="CustomerTypeKid.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Menu.cs" Line="7" Column="28" />
       <File FileName="Program.cs" Line="12" Column="10" />
       <File FileName="Order.cs" Line="14" Column="17" />
-      <File FileName="CustomerFactory.cs" Line="1" Column="1" />
+      <File FileName="CustomerFactory.cs" Line="11" Column="34" />
       <File FileName="Kitchen.cs" Line="1" Column="1" />
+      <File FileName="ICalculate.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectSolution" expanded="True">
             <Node name="ProjectSolution" expanded="True">
-              <Node name="Order.cs" selected="True" />
+              <Node name="ICalculate.cs" selected="True" />
             </Node>
           </Node>
         </State>
