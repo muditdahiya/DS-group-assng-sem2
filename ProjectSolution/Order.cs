@@ -47,5 +47,11 @@ namespace ProjectSolution
                 Console.WriteLine("The item you are trying to remove does not exist"); //for when disassociation occurs (items that don't exists cannot be edited)
             }
         }
+
+        //method to clear the order
+        public void Clear()
+        {
+            MenuItems.Clear();
+        }
     }
 }

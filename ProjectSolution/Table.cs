@@ -16,6 +16,13 @@ namespace ProjectSolution
             Order = new Order();
         }
 
+        //checkout method that empties table, generates bill, resets order
+        public void Checkout ()
+        {
+            IsOccupied = false;
+            Order.Clear();
+            //TODO generate bill
+        }
 
     }
 }
