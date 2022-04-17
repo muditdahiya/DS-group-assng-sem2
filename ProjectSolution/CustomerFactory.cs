@@ -4,7 +4,7 @@ namespace ProjectSolution
 {
     class CustomerFactory
     {
-        public Customer GetCustomer(int age, bool isStudent)
+        public static Customer GetCustomer(int age, bool isStudent)
         {   //if statements to check customer type and redeemable discounts
             if (isStudent)
             {

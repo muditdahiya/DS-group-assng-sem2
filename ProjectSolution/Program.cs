@@ -29,7 +29,8 @@ while (choice != -1)
 
     Console.Write("\n" + "Enter option: ");
     
-    string input = Console.ReadLine();
+    //string to take user inputs
+    string userInput = Console.ReadLine();
     Console.WriteLine();
 
     try
@@ -46,8 +47,50 @@ while (choice != -1)
     {
         case 1:
             //create customer and assign to table
-            Customer customer = new Customer();
 
+            //get customer data
+            Console.Write("Age of customer: ");
+            int age;
+            while (true)
+            {
+                try
+                {
+                    userInput = Console.ReadLine();
+                    age = Int32.Parse(userInput);
+                    //if parse was successful, end the while loop
+                    break;
+                }
+                catch (FormatException)
+                {
+                    //if exception then take input again
+                    Console.WriteLine("Enter integer age.");
+                }
+            }
+
+            Console.Write("Is customer a student? (y / n) ");
+            bool student;
+            while (true)
+            {
+                userInput = Console.ReadLine();
+                if (userInput == "y")
+                {
+                    student = true;
+                    break;
+                }
+                else if (userInput == "n")
+                {
+                    student = false;
+                    break;
+                } 
+                else
+                {
+                    Console.WriteLine("Enter y or n only");
+                }
+            }
+
+            //get customer instance
+            Customer customer = CustomerFactory.GetCustomer(age, student);
+            
             //look for an empty table and assign to table
             //boolean to check if an unoccupied table is found or not
             bool foundTable = false;
@@ -61,7 +104,12 @@ while (choice != -1)
                 }
             }
 
-            Console.WriteLine("Implement in progress");
+            //if table not found then output
+            if (!foundTable)
+            {
+                Console.WriteLine("All tables are occupied.");
+            }
+
             break;
         case 2:
             Console.WriteLine("Implement in progress");
