@@ -17,8 +17,6 @@ namespace ProjectSolution
                                                           new MenuItem("Pasta",9),
                                                           new MenuItem("Coffee",3),
                                                           new MenuItem("Tea",4)}; // Add some items to the list 
-
-
         
         // Returns unique instance of Menu 
         public static Menu GetInstance()
@@ -69,7 +67,4 @@ namespace ProjectSolution
     {
         void Display();
     }
-
-
-
 }
