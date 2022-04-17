@@ -13,6 +13,7 @@ namespace ProjectSolution
         public Table(int n)
         {
             Number = n;
+            Order = new Order();
         }
 
 

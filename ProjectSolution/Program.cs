@@ -117,12 +117,15 @@ while (choice != -1)
 
             break;
         case 2:
+            //generate bill, empty table
             Console.WriteLine("Implement in progress");
             break;
         case 3:
+            //generate order and assign to customer
             Console.WriteLine("Implement in progress");
             break;
         case 4:
+            //sum the TipJar
             Console.WriteLine("Implement in progress");
             break;
         case -1:

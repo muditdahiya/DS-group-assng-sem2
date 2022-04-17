@@ -10,17 +10,13 @@ namespace ProjectSolution
      //Menu is the Menu item name and int is the number of that Menu item ordered
         private Dictionary<Menu, int> MenuItems;
 
-        //Pointer for Customer that's placing the order (association)
-        private Customer* CustomerName;
 
-        //Constructor with customer * parameter creates order for that customer
-        public Order(Customer* CustName)
+        //Constructor initiates dictionary
+        public Order()
         {
-            //CustomerName pointer created
-            CustomerName = CustName;
             MenuItems = new Dictionary<Menu, int>();
-
         }
+
         //Adding items to the order
         public void AddItem(Menu item, int quantity)
         {//checks if item exists in MenuItems 
@@ -43,7 +39,7 @@ namespace ProjectSolution
 
                 if (MenuItems[item] <= 0) //item can only size down till 1 cannot be negative & NIL (0) value
                 {
-                    MenuItems.Remove(item, quantity);  //removing a key / value using the Remove() method
+                    MenuItems.Remove(item);  //removing a key / value using the Remove() method
                 }
             }
             else 
