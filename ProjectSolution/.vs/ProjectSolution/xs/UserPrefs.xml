@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{728765EF-125D-4C22-B0E5-D206DFB6339C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Menu.cs">
+    <Files>
+      <File FileName="Program.cs" Line="9" Column="22" />
+      <File FileName="Menu.cs" Line="22" Column="44" />
+      <File FileName="CustomerTypeStudent.cs" Line="1" Column="1" />
+      <File FileName="Bill.cs" Line="10" Column="23" />
+      <File FileName="BillCalculator.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProjectSolution" expanded="True">
+            <Node name="ProjectSolution" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ProjectSolution PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
