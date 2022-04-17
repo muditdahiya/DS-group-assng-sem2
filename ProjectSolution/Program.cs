@@ -1,9 +1,13 @@
 ﻿using ProjectSolution;
 //MAIN
 
-
 //tables array with 10 empty tables
 Table[] tables = new Table[10];
+//populating tables array
+for (int i = 0; i < tables.Length; i++)
+{
+    tables[i] = new Table(i);
+}
 
 //singleton class Menu
 Menu menu = Menu.GetInstance();
@@ -41,6 +45,22 @@ while (choice != -1)
     switch (choice)
     {
         case 1:
+            //create customer and assign to table
+            Customer customer = new Customer();
+
+            //look for an empty table and assign to table
+            //boolean to check if an unoccupied table is found or not
+            bool foundTable = false;
+            foreach(var table in tables)
+            {
+                if(!table.IsOccupied)
+                {
+                    table.Customer = customer;
+                    foundTable = true;
+                    break;
+                }
+            }
+
             Console.WriteLine("Implement in progress");
             break;
         case 2:
