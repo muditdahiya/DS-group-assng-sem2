@@ -4,11 +4,11 @@ namespace ProjectSolution
 {
     class Table
     {
-        int Number { get; }
-        Customer Customer { get; set; }
-        Order Order { get; set; }
-        Bill Bill { get; set; }
-        bool IsOccupied { get; set; }
+        public int Number { get; }
+        public Customer Customer { get; set; }
+        public Order Order { get; set; }
+        public Bill Bill { get; set; }
+        public bool IsOccupied { get; set; }
 
         public Table(int n)
         {
