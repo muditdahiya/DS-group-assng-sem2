@@ -16,6 +16,9 @@ Menu menu = Menu.GetInstance();
 //queue of orders
 Queue<Order> orders = new Queue<Order>();
 
+//tips for servers
+TipJar tipJar = new TipJar();
+
 int choice = 0;
 while (choice != -1)
 {
@@ -118,7 +121,7 @@ while (choice != -1)
             break;
 
         case 2:
-            //generate bill, empty table
+            //generate bill, ask tip, empty table,
             {
                 Console.WriteLine("Implement in progress");
 
@@ -218,6 +221,8 @@ while (choice != -1)
 
                 //TODO add item to order
 
+
+                //send order to kitchen
                 
             }
 

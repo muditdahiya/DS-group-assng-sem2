@@ -7,5 +7,11 @@ namespace ProjectSolution
         public TipJar()
         {
         }
+
+        //method that sums the stack, empties it
+        public double Sum ()
+        {
+
+        }
     }
 }
