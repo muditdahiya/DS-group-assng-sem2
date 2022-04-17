@@ -4,6 +4,7 @@
 //tables array with 10 empty tables
 Table[] tables = new Table[10];
 //populating tables array
+//table numbers vary from 0 to 9
 for (int i = 0; i < tables.Length; i++)
 {
     tables[i] = new Table(i);
@@ -29,17 +30,18 @@ while (choice != -1)
 
     Console.Write("\n" + "Enter option: ");
     
-    //string to take user inputs
+    //string to take user input
     string userInput = Console.ReadLine();
     Console.WriteLine();
 
     try
     {
-        choice = Int32.Parse(input);
+        choice = Int32.Parse(userInput);
     }
     catch (FormatException)
     {
         Console.WriteLine("That is not a valid option");
+        //continue to skip switch statement
         continue;
     }
 
@@ -96,9 +98,12 @@ while (choice != -1)
             bool foundTable = false;
             foreach(var table in tables)
             {
+                //if table is not occupied then 
                 if(!table.IsOccupied)
                 {
+                    //set customer to that table and set occupied to true
                     table.Customer = customer;
+                    table.IsOccupied = true;
                     foundTable = true;
                     break;
                 }
