@@ -49,88 +49,192 @@ while (choice != -1)
     {
         case 1:
             //create customer and assign to table
-
-            //get customer data
-            Console.Write("Age of customer: ");
-            int age;
-            while (true)
             {
-                try
+                //get customer data
+                Console.Write("Age of customer: ");
+                int age;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        age = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter integer age.");
+                    }
+                }
+
+                Console.Write("Is customer a student? (y / n) ");
+                bool student;
+                while (true)
                 {
                     userInput = Console.ReadLine();
-                    age = Int32.Parse(userInput);
-                    //if parse was successful, end the while loop
-                    break;
+                    if (userInput == "y")
+                    {
+                        student = true;
+                        break;
+                    }
+                    else if (userInput == "n")
+                    {
+                        student = false;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter y or n only");
+                    }
                 }
-                catch (FormatException)
+
+                //get customer instance
+                Customer customer = CustomerFactory.GetCustomer(age, student);
+
+                //look for an empty table and assign to table
+                //boolean to check if an unoccupied table is found or not
+                bool foundTable = false;
+                foreach (var table in tables)
                 {
-                    //if exception then take input again
-                    Console.WriteLine("Enter integer age.");
+                    //if table is not occupied then 
+                    if (!table.IsOccupied)
+                    {
+                        //set customer to that table and set occupied to true
+                        table.Customer = customer;
+                        table.IsOccupied = true;
+                        foundTable = true;
+                        break;
+                    }
+                }
+
+                //if table not found then output
+                if (!foundTable)
+                {
+                    Console.WriteLine("All tables are occupied.");
                 }
             }
-
-            Console.Write("Is customer a student? (y / n) ");
-            bool student;
-            while (true)
-            {
-                userInput = Console.ReadLine();
-                if (userInput == "y")
-                {
-                    student = true;
-                    break;
-                }
-                else if (userInput == "n")
-                {
-                    student = false;
-                    break;
-                } 
-                else
-                {
-                    Console.WriteLine("Enter y or n only");
-                }
-            }
-
-            //get customer instance
-            Customer customer = CustomerFactory.GetCustomer(age, student);
-            
-            //look for an empty table and assign to table
-            //boolean to check if an unoccupied table is found or not
-            bool foundTable = false;
-            foreach(var table in tables)
-            {
-                //if table is not occupied then 
-                if(!table.IsOccupied)
-                {
-                    //set customer to that table and set occupied to true
-                    table.Customer = customer;
-                    table.IsOccupied = true;
-                    foundTable = true;
-                    break;
-                }
-            }
-
-            //if table not found then output
-            if (!foundTable)
-            {
-                Console.WriteLine("All tables are occupied.");
-            }
-
             break;
+
         case 2:
             //generate bill, empty table
-            Console.WriteLine("Implement in progress");
+            {
+                Console.WriteLine("Implement in progress");
+
+                Console.Write("Table number you would like to checkout: ");
+                int number;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        number = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter valid table number.");
+                    }
+                }
+
+                //keeping the table as a variable for easy access
+                Table currentTable = tables[number];
+
+                if (!currentTable.IsOccupied)
+                {
+                    Console.WriteLine("This table isn't occupied, cannot checkout.");
+                }
+                else
+                {
+                    currentTable.Checkout();
+                }
+            }
             break;
+
         case 3:
-            //generate order and assign to customer
-            Console.WriteLine("Implement in progress");
+            //generate order and assign to table
+            {
+                Console.Write("Take order for table number : ");
+                int number;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        number = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter valid table number.");
+                    }
+                }
+
+                //get table order 
+                Order order = tables[number].Order;
+
+                //TODO show menu
+
+                //take user choices
+                Console.Write("Select item: ");
+                int item;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        item = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter valid item number.");
+                    }
+                }
+                Console.Write("Quantity : ");
+                int qty;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        qty = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter valid item number.");
+                    }
+                }
+
+                //TODO add item to order
+
+                
+            }
+
             break;
+
         case 4:
             //sum the TipJar
-            Console.WriteLine("Implement in progress");
+            {
+                Console.WriteLine("Implement in progress");
+            }
+            
             break;
+
         case -1:
             Console.WriteLine("Bye");
             break;
+
         default:
             Console.WriteLine("Invalid selection.");
             break;
