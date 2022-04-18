@@ -6,21 +6,22 @@
     internal class SumBillAmountStrategy : ICalculate
     {
         private double totalBillAmount;
-        private Dictionary<int, Order> orders;
+        private Order order;
 
-        public SumBillAmountStrategy(Dictionary<int, Order>  orders)
+        public SumBillAmountStrategy(Order  order)
         {
-            this.orders = orders;
+            this.order = order;
         }
 
         /// <inheritdoc/>
         public void DoAlgorithm()
         {
-            foreach (var order in orders)
-            {
-                //totalBillAmount += order.Amount;
-            }
+            var menuItems = order.MenuItems;
 
+            foreach (var item in menuItems)
+            {
+                totalBillAmount += (item.Key.price * item.Value);
+            }
         }
 
         /// <inheritdoc/>

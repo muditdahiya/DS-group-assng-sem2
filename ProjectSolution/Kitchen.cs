@@ -9,12 +9,12 @@ namespace ProjectSolution
     class Kitchen
     {
         //member variable
-        Queue orders;
+        Queue<Order> orders;
 
         public Kitchen()
         {
             //creating a queue
-            orders = new Queue();  
+            orders = new Queue<Order>();  
         }
         //Order item is added to queue
         public void AddOrder(Order item)

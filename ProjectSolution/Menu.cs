@@ -2,7 +2,7 @@
 
 namespace ProjectSolution
 {
-    internal class Menu : IMenuComponent
+    internal class Menu
     {
         // Default private constructor for menu since it is singleton
         private Menu() { }
@@ -11,12 +11,12 @@ namespace ProjectSolution
 
         // List of menu components
         // Can be hold either MenuItem or Menu if we consider different types of menus
-        private List<IMenuComponent> MenuComponents = new List<IMenuComponent>()
-                                                        { new MenuItem("Pizza", 4.5),
-                                                          new MenuItem("Burger",7),
-                                                          new MenuItem("Pasta",9),
-                                                          new MenuItem("Coffee",3),
-                                                          new MenuItem("Tea",4)}; // Add some items to the list 
+        private List<IMenuItem> MenuComponents = new List<IMenuItem>()
+                                                        { new MenuItem(1, "Pizza", 4.5),
+                                                          new MenuItem(2, "Burger",7),
+                                                          new MenuItem(3, "Pasta",9),
+                                                          new MenuItem(4, "Coffee",3),
+                                                          new MenuItem(5, "Tea",4)}; // Add some items to the list 
         
         // Returns unique instance of Menu 
         public static Menu GetInstance()
@@ -39,17 +39,24 @@ namespace ProjectSolution
                 item.Display(); // will display MenuItem
             }
         }
+
+        public IMenuItem GetMenuItem(int menuItemId)
+        {
+            return MenuComponents.First(x => x.id == menuItemId);
+        }
     }
 
     // Item class which holds information about a particular item
     // Has name of the item and price
-    internal class MenuItem : IMenuComponent
+    internal class MenuItem : IMenuItem
     {
-        string name;
-        double price;
+        public int id { get; set; }
+        public string name { get; set; }
+        public double price { get; set; }
 
-        public MenuItem(string name, double price)
+        public MenuItem(int id, string name, double price)
         {
+            this.id = id;
             this.name = name;
             this.price = price;
         }
@@ -57,14 +64,17 @@ namespace ProjectSolution
         // Displays Menu Item
         public void Display()
         {
-            Console.WriteLine("{0}\t${1}",name,price);
+            Console.WriteLine("{0}. {1}\t${2}", id, name,price);
 
         }
     }
 
     // Component interface which contains common method for Menu and a MenuItem
-    internal interface IMenuComponent
+    internal interface IMenuItem
     {
+        int id { get; set; }
+        string name { get; set; }
+        double price { get; set; }
         void Display();
     }
 }

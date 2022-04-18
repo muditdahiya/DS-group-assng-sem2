@@ -11,19 +11,24 @@ namespace ProjectSolution
     /// </summary>
     internal class ParseOrders
     {
-        private readonly Dictionary<int, Order> orders;
+        private readonly Order order;
 
-        public ParseOrders(Dictionary<int, Order> orders)
+        public ParseOrders(Order order)
         {
-            this.orders = orders;
+            this.order = order;
         }
 
         /// <summary>
         /// Method to generate bill
         /// </summary>
-        public void GenerateBill()
+        public void DisplayBill()
         {
-
+            var orderItems = order.MenuItems;
+            Console.WriteLine("Item||Quantity||PerUnitPrice||Total");
+            foreach (var item in orderItems)
+            {
+                Console.WriteLine($"{item.Key.name}||{item.Value}||{item.Key.price}||{item.Key.price * item.Value}");
+            }
         }
     }
 }

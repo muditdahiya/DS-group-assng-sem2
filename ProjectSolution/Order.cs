@@ -8,38 +8,44 @@ namespace ProjectSolution
     {//TO DO : "Menu" changes in accordance with Mihir's Menu item's object name (Eg: Burger, Fries etc.)
      //MenuItems contains the list of items Customers ordered
      //Menu is the Menu item name and int is the number of that Menu item ordered
-        private Dictionary<Menu, int> MenuItems;
-
+        public Dictionary<IMenuItem, int> MenuItems;
+        private Menu menu;
 
         //Constructor initiates dictionary
         public Order()
         {
-            MenuItems = new Dictionary<Menu, int>();
+            MenuItems = new Dictionary<IMenuItem, int>();
+            menu = Menu.GetInstance();
         }
 
         //Adding items to the order
-        public void AddItem(Menu item, int quantity)
-        {//checks if item exists in MenuItems 
-            if (MenuItems.ContainsKey(item)) 
+        public void AddItem(int id, int quantity)
+        {
+            var menuItem = menu.GetMenuItem(id);
+            //checks if item exists in MenuItems 
+            if (MenuItems.ContainsKey(menuItem)) 
             {
-                MenuItems[item] += quantity; //to add quantity to already existing order quantity
+                MenuItems[menuItem] += quantity; //to add quantity to already existing order quantity
             }
             else
             {
-                MenuItems.Add(item, quantity); //adding a key / value using the Add() method
+                MenuItems.Add(menuItem, quantity); //adding a key / value using the Add() method
             }
         }
 
         //Removing items from the order
-        public void RemoveItem(Menu item, int quantity)
-        {   //checks if item exists already in the order list
-            if (MenuItems.ContainsKey(item)) 
-            {
-                MenuItems[item] -= quantity; //to remove quantity to already existing order quantity
+        public void RemoveItem(int id, int quantity)
+        {
+            var menuItem = menu.GetMenuItem(id);
 
-                if (MenuItems[item] <= 0) //item can only size down till 1 cannot be negative & NIL (0) value
+            //checks if item exists already in the order list
+            if (MenuItems.ContainsKey(menuItem)) 
+            {
+                MenuItems[menuItem] -= quantity; //to remove quantity to already existing order quantity
+
+                if (MenuItems[menuItem] <= 0) //item can only size down till 1 cannot be negative & NIL (0) value
                 {
-                    MenuItems.Remove(item);  //removing a key / value using the Remove() method
+                    MenuItems.Remove(menuItem);  //removing a key / value using the Remove() method
                 }
             }
             else 
