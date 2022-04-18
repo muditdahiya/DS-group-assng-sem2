@@ -24,10 +24,10 @@ namespace ProjectSolution
         public void DisplayBill()
         {
             var orderItems = order.MenuItems;
-            Console.WriteLine("Item\tQuantity\tPerUnitPrice\tTotal");
+            Console.WriteLine("Item||Quantity||PerUnitPrice||Total");
             foreach (var item in orderItems)
             {
-                Console.WriteLine($"{item.Key.name}\t{item.Value}\t{item.Key.price}\t{item.Key.price * item.Value}");
+                Console.WriteLine($"{item.Key.name}||{item.Value}||{item.Key.price}||{item.Key.price * item.Value}");
             }
         }
     }

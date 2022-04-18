@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj": {}
+    "C:\\workspace for sem 2\\Data structure and Design Pattern\\Project\\DS-group-assng-sem2\\ProjectSolution\\ProjectSolution.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj": {
+    "C:\\workspace for sem 2\\Data structure and Design Pattern\\Project\\DS-group-assng-sem2\\ProjectSolution\\ProjectSolution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj",
+        "projectUniqueName": "C:\\workspace for sem 2\\Data structure and Design Pattern\\Project\\DS-group-assng-sem2\\ProjectSolution\\ProjectSolution.csproj",
         "projectName": "ProjectSolution",
-        "projectPath": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\ProjectSolution.csproj",
-        "packagesPath": "C:\\Users\\mudit\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\ITE5231 DSA\\GroupAssignment\\ProjectSolution\\obj\\",
+        "projectPath": "C:\\workspace for sem 2\\Data structure and Design Pattern\\Project\\DS-group-assng-sem2\\ProjectSolution\\ProjectSolution.csproj",
+        "packagesPath": "C:\\Users\\vanma_2lhixtg\\.nuget\\packages\\",
+        "outputPath": "C:\\workspace for sem 2\\Data structure and Design Pattern\\Project\\DS-group-assng-sem2\\ProjectSolution\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mudit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vanma_2lhixtg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
