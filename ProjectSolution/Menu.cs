@@ -42,7 +42,7 @@ namespace ProjectSolution
 
         public IMenuItem GetMenuItem(int menuItemId)
         {
-            return MenuComponents[menuItemId];
+            return MenuComponents.First(x => x.id == menuItemId);
         }
     }
 
@@ -72,6 +72,7 @@ namespace ProjectSolution
     // Component interface which contains common method for Menu and a MenuItem
     internal interface IMenuItem
     {
+        int id { get; set; }
         string name { get; set; }
         double price { get; set; }
         void Display();
