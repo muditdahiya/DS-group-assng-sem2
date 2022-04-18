@@ -9,7 +9,7 @@ namespace ProjectSolution
         }
 
         //method that sums the stack, empties it
-        public double Sum ()
+        public void Sum ()
         {
 
         }

@@ -20,8 +20,9 @@ namespace ProjectSolution
         public void Checkout ()
         {
             IsOccupied = false;
+            Bill = new Bill(Order, Customer);
+            Bill.GenerateBill();
             Order.Clear();
-            //TODO generate bill
         }
 
     }

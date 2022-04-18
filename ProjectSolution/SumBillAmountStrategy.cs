@@ -20,7 +20,7 @@
 
             foreach (var item in menuItems)
             {
-                totalBillAmount += item.Key.price;
+                totalBillAmount += (item.Key.price * item.Value);
             }
         }
 

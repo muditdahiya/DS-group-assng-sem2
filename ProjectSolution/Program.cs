@@ -123,8 +123,6 @@ while (choice != -1)
         case 2:
             //generate bill, ask tip, empty table,
             {
-                Console.WriteLine("Implement in progress");
-
                 Console.Write("Table number you would like to checkout: ");
                 int number;
                 while (true)
@@ -153,6 +151,7 @@ while (choice != -1)
                 else
                 {
                     currentTable.Checkout();
+                    currentTable.IsOccupied = false;
                 }
             }
             break;
@@ -182,7 +181,7 @@ while (choice != -1)
                 Order order = tables[number].Order;
 
                 //TODO show menu
-
+                menu.Display();
                 //take user choices
                 Console.Write("Select item: ");
                 int item;
@@ -220,7 +219,7 @@ while (choice != -1)
                 }
 
                 //TODO add item to order
-
+                tables[number].Order.AddItem(item, qty);
 
                 //send order to kitchen
                 
