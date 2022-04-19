@@ -33,8 +33,8 @@ while (choice != -1)
     Console.WriteLine("1. New customer"); //create customer and assign to table
     Console.WriteLine("2. Take order"); //generate order and assign to customer
     Console.WriteLine("3. Checkout customer"); //generate bill, empty table
-    Console.WriteLine("4. Calculate tips"); //sum the TipJar
-    Console.WriteLine("-1. Close restaurant for the day"); //can use some facade here
+    Console.WriteLine("4. View tables summary"); //shows what's happening with all the tables
+    Console.WriteLine("-1. Close restaurant for the day"); //calcualte tips, close restaurant
 
     Console.Write("\n" + "Enter option: ");
     
@@ -145,7 +145,7 @@ while (choice != -1)
                     catch (FormatException)
                     {
                         //if exception then take input again
-                        Console.WriteLine("Enter valid table number.");
+                        Console.WriteLine("\nEnter valid table number.");
                     }
                 }
 
@@ -155,7 +155,7 @@ while (choice != -1)
                 //if not occupied then error
                 if (!currentTable.IsOccupied)
                 {
-                    Console.WriteLine("This table isn't occupied, cannot take order.");
+                    Console.WriteLine("\nThis table isn't occupied, cannot take order.");
                 }
                 else
                 //if occupied then show menu and take order
@@ -182,7 +182,7 @@ while (choice != -1)
                             catch (FormatException)
                             {
                                 //if exception then take input again
-                                Console.WriteLine("Enter valid item number.");
+                                Console.WriteLine("\nEnter valid item number.\n");
                             }
                         }
 
@@ -210,17 +210,20 @@ while (choice != -1)
                             //add item to table order
                             tables[number].Order.AddItem(item, qty);
 
-                            //send order to kitchen
-                            kitchen.AddOrder(tables[number].Order);
+                            
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("\nEnter valid s.no from menu items.");
+                            Console.WriteLine("\nEnter valid s.no from menu items.\n");
+                            //continue to execute loop again without asking user
+                            continue;
                         }
 
                         Console.Write("Would you like add more items? (y / n) ");
                         more = Console.ReadLine();
                     }
+                    //send order to kitchen
+                    kitchen.AddOrder(tables[number].Order);
                 }
             }
 
@@ -282,22 +285,24 @@ while (choice != -1)
             break;
 
         case 4:
-            //sum the TipJar
+            //show all table summary
             {
-                double sum = tipJar.Sum();
-                Console.WriteLine("Tips received today: " + sum);
+                foreach (var item in tables)
+                {
+                    Console.WriteLine(item);
+                }
             }
-            
+
             break;
 
         case -1:
             {
                 //empty the tip jar
                 double totalTips = tipJar.Sum();
-                Console.WriteLine($"Total Tips Earned: {totalTips}");
+                Console.WriteLine($"Total Tips Earned: {totalTips}\n");
                 //this will check out all tables
                 restaurant.close(tables);
-                Console.WriteLine("Bye");
+                Console.WriteLine("\nBye");
             }
             
             break;

@@ -17,17 +17,21 @@ namespace ProjectSolution
         }
 
         // Method to generate bill
-        public void DisplayBill()
+        public string DisplayBill()
         {
             var orderItems = order.MenuItems;
-            Console.WriteLine("Item    || Quantity || PerUnitPrice || Total");
+            string result = "Item    || Quantity || PerUnitPrice || Total\n";
+
             foreach (var item in orderItems)
             {
-                Console.WriteLine($"{item.Key.name.PadRight(8)}|| " + 
-                    $"{item.Value.ToString().PadRight(9)}|| " + 
-                    $"{item.Key.price.ToString().PadRight(13)}|| " + 
-                    $"{(item.Key.price * item.Value).ToString().PadRight(8)}");
+                result += $"{item.Key.name.PadRight(8)}|| " +
+                    $"{item.Value.ToString().PadRight(9)}|| " +
+                    $"{item.Key.price.ToString().PadRight(13)}|| " +
+                    $"{(item.Key.price * item.Value).ToString().PadRight(8)}\n";
+
             }
+
+            return result;
         }
     }
 }

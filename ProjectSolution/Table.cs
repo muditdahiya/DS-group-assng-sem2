@@ -26,5 +26,17 @@ namespace ProjectSolution
             Order.Clear();
         }
 
+        //to string to display table inforamtion
+        public override string ToString()
+        {
+            ParseOrders parser = new ParseOrders(Order);
+            string result = $"Table number: {Number}\n";
+            result += $"Occupied: {IsOccupied}\n";
+            if (IsOccupied)
+            {
+                result += $"Order: \n{parser.DisplayBill()}\n";
+            }
+            return result;
+        }
     }
 }

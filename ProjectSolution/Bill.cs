@@ -22,7 +22,7 @@ namespace ProjectSolution
         public void GenerateBill()
         {
             // 1. Display the contents of the order and the itemized price calculation
-            orderParser.DisplayBill();
+            Console.WriteLine(orderParser.DisplayBill()); 
             Console.WriteLine("***********************************");
 
             //2. Calcuate Total Amount
