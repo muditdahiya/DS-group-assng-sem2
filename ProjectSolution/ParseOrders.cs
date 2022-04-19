@@ -20,10 +20,13 @@ namespace ProjectSolution
         public void DisplayBill()
         {
             var orderItems = order.MenuItems;
-            Console.WriteLine("Item||Quantity||PerUnitPrice||Total");
+            Console.WriteLine("Item    || Quantity || PerUnitPrice || Total");
             foreach (var item in orderItems)
             {
-                Console.WriteLine($"{item.Key.name}||{item.Value}||{item.Key.price}||{item.Key.price * item.Value}");
+                Console.WriteLine($"{item.Key.name.PadRight(8)}|| " + 
+                    $"{item.Value.ToString().PadRight(8)}|| " + 
+                    $"{item.Key.price.ToString().PadRight(13)}|| " + 
+                    $"{(item.Key.price * item.Value).ToString().PadRight(8)}");
             }
         }
     }

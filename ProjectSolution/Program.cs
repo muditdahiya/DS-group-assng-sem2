@@ -213,6 +213,7 @@ while (choice != -1)
                     Console.WriteLine("This table isn't occupied, cannot take order.");
                 }
                 else
+                //if occupied then show menu and take order
                 {
                     //show menu
                     menu.Display();
