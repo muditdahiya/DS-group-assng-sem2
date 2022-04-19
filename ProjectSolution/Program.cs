@@ -19,8 +19,8 @@ for (int i = 0; i < tables.Length; i++)
 //singleton class Menu
 Menu menu = Menu.GetInstance();
 
-//queue of orders
-Queue<Order> orders = new Queue<Order>();
+//kitchen instance to send orders to it
+Kitchen kitchen = new Kitchen();
 
 //tips for servers
 TipJar tipJar = new TipJar();
@@ -206,7 +206,6 @@ while (choice != -1)
                         Console.WriteLine("Enter valid item number.");
                     }
                 }
-                //get item
 
                 Console.Write("Quantity : ");
                 int qty;
@@ -226,11 +225,11 @@ while (choice != -1)
                     }
                 }
 
-                //TODO add item to order
+                //add item to table order
                 tables[number].Order.AddItem(item, qty);
 
                 //send order to kitchen
-                
+                kitchen.AddOrder(order);
             }
 
             break;
@@ -244,7 +243,7 @@ while (choice != -1)
             break;
 
         case -1:
-            restaurant.close(); //this will check out all tables
+            restaurant.close(tables); //this will check out all tables
             Console.WriteLine("Bye");
             break;
 

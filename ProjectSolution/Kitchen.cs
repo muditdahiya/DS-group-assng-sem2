@@ -20,7 +20,7 @@ namespace ProjectSolution
         public void AddOrder(Order item)
         {
             orders.Enqueue(item);
-            Console.WriteLine("Order received, coming right up");
+            Console.WriteLine("Order received by kitchen, coming right up");
         }
 
         //Order item is removed from queue

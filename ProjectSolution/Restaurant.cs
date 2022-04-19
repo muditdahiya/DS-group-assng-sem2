@@ -16,7 +16,15 @@ namespace ProjectSolution
                 table.IsOccupied = false;
             }
         }
-        //close method
+        //close method checks out all tables
+        public void close(Table[] tables)
+        {
+            State = false;
+            foreach (var table in tables)
+            {
+                table.Checkout();
+            }
+        }
     }
 }
 
