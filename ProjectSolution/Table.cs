@@ -21,7 +21,8 @@ namespace ProjectSolution
         public void Checkout ()
         {
             IsOccupied = false;
-            Bill = new Bill(Order, Customer);
+            //this refers to the table object we are currently inside
+            Bill = new Bill(Order, this);
             Bill.GenerateBill();
             Order.Clear();
         }

@@ -9,11 +9,13 @@ namespace ProjectSolution
         private readonly Customer customer;
         private BillCalculator billCalculator;
         private ParseOrders orderParser;
+        private Table table;
 
-        public Bill(Order order, Customer Customer)
+        public Bill(Order order, Table table)
         {
             this.order = order;
-            customer = Customer;
+            this.table = table;
+            customer = table.Customer;
             billCalculator = new BillCalculator();
             orderParser = new ParseOrders(order);
         }
@@ -21,8 +23,9 @@ namespace ProjectSolution
         // Method to generate bill
         public void GenerateBill()
         {
+            Console.WriteLine("\nBill for table number " + table.Number);
             // 1. Display the contents of the order and the itemized price calculation
-            Console.WriteLine(orderParser.DisplayBill()); 
+            Console.WriteLine(orderParser.DisplayBill());
             Console.WriteLine("***********************************");
 
             //2. Calcuate Total Amount
