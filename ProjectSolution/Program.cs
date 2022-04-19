@@ -94,7 +94,7 @@ while (choice != -1)
                     }
                     else
                     {
-                        Console.WriteLine("Enter y or n only");
+                        Console.WriteLine("Enter y or n only.");
                     }
                 }
 
@@ -113,6 +113,9 @@ while (choice != -1)
                         table.Customer = customer;
                         table.IsOccupied = true;
                         foundTable = true;
+                        
+                        //output
+                        Console.WriteLine("Customer got table number: " + table.Number);
                         break;
                     }
                 }
@@ -149,6 +152,7 @@ while (choice != -1)
                 //keeping the table as a variable for easy access
                 Table currentTable = tables[number];
 
+                //if not occupied then error
                 if (!currentTable.IsOccupied)
                 {
                     Console.WriteLine("This table isn't occupied, cannot checkout.");
@@ -169,13 +173,12 @@ while (choice != -1)
                         catch (FormatException)
                         {
                             //if exception then take input again
-                            Console.WriteLine("Enter valid table number.");
+                            Console.WriteLine("Enter decimal number.");
                         }
                     }
 
                     tipJar.Add(tipAmount);
                     currentTable.Checkout();
-                    currentTable.IsOccupied = false;
                 }
             }
             break;
@@ -255,17 +258,22 @@ while (choice != -1)
         case 4:
             //sum the TipJar
             {
-                Console.WriteLine("Implement in progress");
+                double sum = tipJar.Sum();
+                Console.WriteLine("Tips received today: " + sum);
             }
             
             break;
 
         case -1:
-            double totalTips = tipJar.Sum();
-            Console.WriteLine("-----------------------------------------");
-            Console.WriteLine($"Total Tips Earned: {totalTips}");
-            restaurant.close(tables); //this will check out all tables
-            Console.WriteLine("Bye");
+            {
+                //empty the tip jar
+                double totalTips = tipJar.Sum();
+                Console.WriteLine($"Total Tips Earned: {totalTips}");
+                //this will check out all tables
+                restaurant.close(tables);
+                Console.WriteLine("Bye");
+            }
+            
             break;
 
         default:
