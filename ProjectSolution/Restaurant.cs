@@ -6,7 +6,7 @@ namespace ProjectSolution
     internal class Restaurant
     {
         //state represents if the restaurant is open or not
-        bool State { get; set; }
+        bool State;
 
         public void open(Table[] tables)
         {

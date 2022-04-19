@@ -204,53 +204,62 @@ while (choice != -1)
                     }
                 }
 
-                //get table order 
-                Order order = tables[number].Order;
+                //keeping the table as a variable for easy access
+                Table currentTable = tables[number];
 
-                //TODO show menu
-                menu.Display();
-                //take user choices
-                Console.Write("Select item: ");
-                int item;
-                while (true)
+                //if not occupied then error
+                if (!currentTable.IsOccupied)
                 {
-                    try
-                    {
-                        userInput = Console.ReadLine();
-                        item = Int32.Parse(userInput);
-                        //if parse was successful, end the while loop
-                        break;
-                    }
-                    catch (FormatException)
-                    {
-                        //if exception then take input again
-                        Console.WriteLine("Enter valid item number.");
-                    }
+                    Console.WriteLine("This table isn't occupied, cannot take order.");
                 }
-
-                Console.Write("Quantity : ");
-                int qty;
-                while (true)
+                else
                 {
-                    try
+                    //show menu
+                    menu.Display();
+
+                    //take user choices
+                    Console.Write("Select item: ");
+                    int item;
+                    while (true)
                     {
-                        userInput = Console.ReadLine();
-                        qty = Int32.Parse(userInput);
-                        //if parse was successful, end the while loop
-                        break;
+                        try
+                        {
+                            userInput = Console.ReadLine();
+                            item = Int32.Parse(userInput);
+                            //if parse was successful, end the while loop
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            //if exception then take input again
+                            Console.WriteLine("Enter valid item number.");
+                        }
                     }
-                    catch (FormatException)
+
+                    Console.Write("Quantity : ");
+                    int qty;
+                    while (true)
                     {
-                        //if exception then take input again
-                        Console.WriteLine("Enter valid item number.");
+                        try
+                        {
+                            userInput = Console.ReadLine();
+                            qty = Int32.Parse(userInput);
+                            //if parse was successful, end the while loop
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            //if exception then take input again
+                            Console.WriteLine("Enter valid item number.");
+                        }
                     }
+
+                    //add item to table order
+                    tables[number].Order.AddItem(item, qty);
+
+                    //send order to kitchen
+                    kitchen.AddOrder(tables[number].Order);
                 }
-
-                //add item to table order
-                tables[number].Order.AddItem(item, qty);
-
-                //send order to kitchen
-                kitchen.AddOrder(order);
             }
 
             break;
