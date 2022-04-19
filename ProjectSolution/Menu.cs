@@ -32,7 +32,7 @@ namespace ProjectSolution
         // Displays all menu components inside MenuComponents list
         public void Display()
         {
-            Console.WriteLine("Name\tPrice");
+            Console.WriteLine("S.No | Name     | Price");
             // Iterate through all items 
             foreach (var item in MenuComponents)
             {
@@ -64,7 +64,7 @@ namespace ProjectSolution
         // Displays Menu Item
         public void Display()
         {
-            Console.WriteLine("{0}. {1}\t${2}", id, name,price);
+            Console.WriteLine($"{(id+".").PadRight(5)}| {name.PadRight(9)}| ${price}");
 
         }
     }
