@@ -25,6 +25,7 @@ namespace ProjectSolution
             // 1. Display the contents of the order and the itemized price calculation
             orderParser.DisplayBill();
             Console.WriteLine("***********************************");
+
             //2. Calcuate Total Amount
             billCalculator.SetStrategy(new SumBillAmountStrategy(order));
             double totalBillAmount = billCalculator.Calculate();

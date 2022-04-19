@@ -13,10 +13,10 @@ namespace ProjectSolution
         // Can be hold either MenuItem or Menu if we consider different types of menus
         private List<IMenuItem> MenuComponents = new List<IMenuItem>()
                                                         { new MenuItem(1, "Pizza", 4.5),
-                                                          new MenuItem(2, "Burger",7),
-                                                          new MenuItem(3, "Pasta",9),
-                                                          new MenuItem(4, "Coffee",3),
-                                                          new MenuItem(5, "Tea",4)}; // Add some items to the list 
+                                                          new MenuItem(2, "Burger", 7),
+                                                          new MenuItem(3, "Pasta", 9),
+                                                          new MenuItem(4, "Coffee", 3),
+                                                          new MenuItem(5, "Tea", 4)}; // Add some items to the list 
         
         // Returns unique instance of Menu 
         public static Menu GetInstance()

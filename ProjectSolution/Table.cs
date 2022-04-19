@@ -1,4 +1,5 @@
 ﻿//keeps track of occupied, order, bill, customer
+//table is observing restaurant
 
 namespace ProjectSolution
 {

@@ -3,6 +3,12 @@
 
 //tables array with 10 empty tables
 Table[] tables = new Table[10];
+
+//restaurant object takes care of tables that act as observers of the restaurant
+Restaurant restaurant = new Restaurant();
+restaurant.open(tables);
+
+
 //populating tables array
 //table numbers vary from 0 to 9
 for (int i = 0; i < tables.Length; i++)
@@ -200,6 +206,8 @@ while (choice != -1)
                         Console.WriteLine("Enter valid item number.");
                     }
                 }
+                //get item
+
                 Console.Write("Quantity : ");
                 int qty;
                 while (true)
@@ -236,6 +244,7 @@ while (choice != -1)
             break;
 
         case -1:
+            restaurant.close(); //this will check out all tables
             Console.WriteLine("Bye");
             break;
 
