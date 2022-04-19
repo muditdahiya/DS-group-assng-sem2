@@ -22,7 +22,8 @@ namespace ProjectSolution
             State = false;
             foreach (var table in tables)
             {
-                table.Checkout();
+                if(table.IsOccupied)
+                    table.Checkout();
             }
         }
     }

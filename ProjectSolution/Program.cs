@@ -4,17 +4,16 @@
 //tables array with 10 empty tables
 Table[] tables = new Table[10];
 
-//restaurant object takes care of tables that act as observers of the restaurant
-Restaurant restaurant = new Restaurant();
-restaurant.open(tables);
-
-
 //populating tables array
 //table numbers vary from 0 to 9
 for (int i = 0; i < tables.Length; i++)
 {
     tables[i] = new Table(i);
 }
+
+//restaurant object takes care of tables that act as observers of the restaurant
+Restaurant restaurant = new Restaurant();
+restaurant.open(tables);
 
 //singleton class Menu
 Menu menu = Menu.GetInstance();
@@ -156,6 +155,25 @@ while (choice != -1)
                 }
                 else
                 {
+                    Console.Write("Enter the tip amount: ");
+                    double tipAmount;
+                    while (true)
+                    {
+                        try
+                        {
+                            userInput = Console.ReadLine();
+                            tipAmount = double.Parse(userInput);
+                            //if parse was successful, end the while loop
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            //if exception then take input again
+                            Console.WriteLine("Enter valid table number.");
+                        }
+                    }
+
+                    tipJar.Add(tipAmount);
                     currentTable.Checkout();
                     currentTable.IsOccupied = false;
                 }
@@ -243,6 +261,9 @@ while (choice != -1)
             break;
 
         case -1:
+            double totalTips = tipJar.Sum();
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine($"Total Tips Earned: {totalTips}");
             restaurant.close(tables); //this will check out all tables
             Console.WriteLine("Bye");
             break;
