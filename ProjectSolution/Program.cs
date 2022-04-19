@@ -115,7 +115,7 @@ while (choice != -1)
                         foundTable = true;
                         
                         //output
-                        Console.WriteLine("Customer got table number: " + table.Number);
+                        Console.WriteLine("\nCustomer got table number: " + table.Number);
                         break;
                     }
                 }
@@ -123,7 +123,7 @@ while (choice != -1)
                 //if table not found then output
                 if (!foundTable)
                 {
-                    Console.WriteLine("All tables are occupied.");
+                    Console.WriteLine("\nAll tables are occupied.");
                 }
             }
             break;
@@ -160,51 +160,67 @@ while (choice != -1)
                 else
                 //if occupied then show menu and take order
                 {
-                    //show menu
-                    menu.Display();
-
-                    //take user choices
-                    Console.Write("Select item: ");
-                    int item;
-                    while (true)
+                    //string to check if user wants to add more items
+                    string more = "y";
+                    while(more == "y")
                     {
+                        //show menu
+                        menu.Display();
+
+                        //take user choices
+                        Console.Write("Select item: ");
+                        int item;
+                        while (true)
+                        {
+                            try
+                            {
+                                userInput = Console.ReadLine();
+                                item = Int32.Parse(userInput);
+                                //if parse was successful, end the while loop
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                //if exception then take input again
+                                Console.WriteLine("Enter valid item number.");
+                            }
+                        }
+
+                        Console.Write("Quantity : ");
+                        int qty;
+                        while (true)
+                        {
+                            try
+                            {
+                                userInput = Console.ReadLine();
+                                qty = Int32.Parse(userInput);
+                                //if parse was successful, end the while loop
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                //if exception then take input again
+                                Console.WriteLine("Enter valid integer.");
+                            }
+                        }
+
+                        //try catch because menu item may not exist
                         try
                         {
-                            userInput = Console.ReadLine();
-                            item = Int32.Parse(userInput);
-                            //if parse was successful, end the while loop
-                            break;
+                            //add item to table order
+                            tables[number].Order.AddItem(item, qty);
+
+                            //send order to kitchen
+                            kitchen.AddOrder(tables[number].Order);
                         }
-                        catch (FormatException)
+                        catch (Exception ex)
                         {
-                            //if exception then take input again
-                            Console.WriteLine("Enter valid item number.");
+                            Console.WriteLine("\nEnter valid s.no from menu items.");
                         }
+
+                        Console.Write("Would you like add more items? (y / n) ");
+                        more = Console.ReadLine();
                     }
-
-                    Console.Write("Quantity : ");
-                    int qty;
-                    while (true)
-                    {
-                        try
-                        {
-                            userInput = Console.ReadLine();
-                            qty = Int32.Parse(userInput);
-                            //if parse was successful, end the while loop
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            //if exception then take input again
-                            Console.WriteLine("Enter valid item number.");
-                        }
-                    }
-
-                    //add item to table order
-                    tables[number].Order.AddItem(item, qty);
-
-                    //send order to kitchen
-                    kitchen.AddOrder(tables[number].Order);
                 }
             }
 
@@ -264,8 +280,6 @@ while (choice != -1)
                 }
             }
             break;
-
-        
 
         case 4:
             //sum the TipJar
