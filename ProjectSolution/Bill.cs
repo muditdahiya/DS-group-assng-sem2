@@ -11,9 +11,9 @@ namespace ProjectSolution
         private ParseOrders orderParser;
         private Table table;
 
-        public Bill(Order order, Table table)
+        public Bill(Table table)
         {
-            this.order = order;
+            this.order = table.Order;
             this.table = table;
             customer = table.Customer;
             billCalculator = new BillCalculator();

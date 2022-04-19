@@ -22,7 +22,7 @@ namespace ProjectSolution
         {
             IsOccupied = false;
             //this refers to the table object we are currently inside
-            Bill = new Bill(Order, this);
+            Bill = new Bill(this);
             Bill.GenerateBill();
             Order.Clear();
         }
