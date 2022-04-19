@@ -24,7 +24,7 @@ namespace ProjectSolution
             foreach (var item in orderItems)
             {
                 Console.WriteLine($"{item.Key.name.PadRight(8)}|| " + 
-                    $"{item.Value.ToString().PadRight(8)}|| " + 
+                    $"{item.Value.ToString().PadRight(9)}|| " + 
                     $"{item.Key.price.ToString().PadRight(13)}|| " + 
                     $"{(item.Key.price * item.Value).ToString().PadRight(8)}");
             }
