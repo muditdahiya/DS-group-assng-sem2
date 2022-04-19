@@ -31,8 +31,8 @@ while (choice != -1)
     Console.WriteLine("\n" + "What would you like to do?");
 
     Console.WriteLine("1. New customer"); //create customer and assign to table
-    Console.WriteLine("2. Checkout customer"); //generate bill, empty table
-    Console.WriteLine("3. Take order"); //generate order and assign to customer
+    Console.WriteLine("2. Take order"); //generate order and assign to customer
+    Console.WriteLine("3. Checkout customer"); //generate bill, empty table
     Console.WriteLine("4. Calculate tips"); //sum the TipJar
     Console.WriteLine("-1. Close restaurant for the day"); //can use some facade here
 
@@ -129,61 +129,6 @@ while (choice != -1)
             break;
 
         case 2:
-            //generate bill, ask tip, empty table,
-            {
-                Console.Write("Table number you would like to checkout: ");
-                int number;
-                while (true)
-                {
-                    try
-                    {
-                        userInput = Console.ReadLine();
-                        number = Int32.Parse(userInput);
-                        //if parse was successful, end the while loop
-                        break;
-                    }
-                    catch (FormatException)
-                    {
-                        //if exception then take input again
-                        Console.WriteLine("Enter valid table number.");
-                    }
-                }
-
-                //keeping the table as a variable for easy access
-                Table currentTable = tables[number];
-
-                //if not occupied then error
-                if (!currentTable.IsOccupied)
-                {
-                    Console.WriteLine("This table isn't occupied, cannot checkout.");
-                }
-                else
-                {
-                    Console.Write("Enter the tip amount: ");
-                    double tipAmount;
-                    while (true)
-                    {
-                        try
-                        {
-                            userInput = Console.ReadLine();
-                            tipAmount = double.Parse(userInput);
-                            //if parse was successful, end the while loop
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            //if exception then take input again
-                            Console.WriteLine("Enter decimal number.");
-                        }
-                    }
-
-                    tipJar.Add(tipAmount);
-                    currentTable.Checkout();
-                }
-            }
-            break;
-
-        case 3:
             //generate order and assign to table
             {
                 Console.Write("Take order for table number : ");
@@ -264,6 +209,63 @@ while (choice != -1)
             }
 
             break;
+
+        case 3:
+            //generate bill, ask tip, empty table,
+            {
+                Console.Write("Table number you would like to checkout: ");
+                int number;
+                while (true)
+                {
+                    try
+                    {
+                        userInput = Console.ReadLine();
+                        number = Int32.Parse(userInput);
+                        //if parse was successful, end the while loop
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        //if exception then take input again
+                        Console.WriteLine("Enter valid table number.");
+                    }
+                }
+
+                //keeping the table as a variable for easy access
+                Table currentTable = tables[number];
+
+                //if not occupied then error
+                if (!currentTable.IsOccupied)
+                {
+                    Console.WriteLine("This table isn't occupied, cannot checkout.");
+                }
+                else
+                {
+                    Console.Write("Enter the tip amount: ");
+                    double tipAmount;
+                    while (true)
+                    {
+                        try
+                        {
+                            userInput = Console.ReadLine();
+                            tipAmount = double.Parse(userInput);
+                            //if parse was successful, end the while loop
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            //if exception then take input again
+                            Console.WriteLine("Enter decimal number.");
+                        }
+                    }
+
+                    tipJar.Add(tipAmount);
+                    currentTable.Checkout();
+                }
+            }
+            break;
+
+        
 
         case 4:
             //sum the TipJar
