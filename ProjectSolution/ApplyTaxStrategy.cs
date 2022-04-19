@@ -1,5 +1,6 @@
 ﻿namespace ProjectSolution
 {
+    // Apply tax calculation
     internal class ApplyTaxStrategy : ICalculate
     {
         private readonly double totalBillAmount;
@@ -12,7 +13,7 @@
         }
         public void DoAlgorithm()
         {
-            totalAmount = totalBillAmount + (totalBillAmount * taxPercentage);
+            totalAmount = totalBillAmount + (totalBillAmount * taxPercentage); // Add Tax percentage to total bill amount
         }
 
         public double GetResult()

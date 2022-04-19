@@ -2,9 +2,7 @@
 
 namespace ProjectSolution
 {
-    /// <summary>
-    /// Facade class for the bill calculator
-    /// </summary>
+    // Facade class for the bill calculator
     internal class Bill
     {
         private readonly Order order;
@@ -20,6 +18,7 @@ namespace ProjectSolution
             orderParser = new ParseOrders(order);
         }
 
+        // Method to generate bill
         public void GenerateBill()
         {
             // 1. Display the contents of the order and the itemized price calculation

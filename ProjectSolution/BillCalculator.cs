@@ -1,16 +1,11 @@
 ﻿namespace ProjectSolution
 {
-    /// <summary>
-    /// Context class for calculating bill amount
-    /// </summary>
+    // Context class for calculating bill amount
     internal class BillCalculator
     {
         private ICalculate strategy;
 
-        /// <summary>
-        /// Method to set the strategy for the calculator
-        /// </summary>
-        /// <param name="strategy">An instance of type <see cref="ICalculate"/> </param>
+        // Method to set the strategy for the calculator
         public void SetStrategy(ICalculate strategy)
         {
             if (strategy == null)
@@ -21,10 +16,7 @@
             this.strategy = strategy;
         }
 
-        /// <summary>
-        /// Method to perfrom calculation as per the set strategy
-        /// </summary>
-        /// <param name="order">Order object.</param>
+        // Method to perfrom calculation as per the set strategy
         public double Calculate()
         {
             if(strategy == null)

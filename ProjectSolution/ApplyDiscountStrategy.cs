@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectSolution
 {
-    /// <summary>
-    /// Strategy class to apply discount.
-    /// </summary>
+    // Strategy class to apply discount.
     internal class ApplyDiscountStrategy : ICalculate
     {
         private double finalBillAmount;
@@ -20,14 +18,11 @@ namespace ProjectSolution
             this.totalBillAmount = totalBillAmount;
         }
 
-        /// <inheritdoc/>
         public void DoAlgorithm()
         {
             var discountPercentage = customer.GetDiscount(); // Get the discount percentage
             finalBillAmount = totalBillAmount - (totalBillAmount * discountPercentage); // Apply discounts
         }
-
-        /// <inheritdoc/>
         public double GetResult()
         {
             return finalBillAmount;

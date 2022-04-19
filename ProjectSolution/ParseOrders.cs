@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectSolution
 {
-    /// <summary>
-    /// Class to parse and generate bill
-    /// </summary>
+    // Class to parse and generate bill
     internal class ParseOrders
     {
         private readonly Order order;
@@ -18,9 +16,7 @@ namespace ProjectSolution
             this.order = order;
         }
 
-        /// <summary>
-        /// Method to generate bill
-        /// </summary>
+        // Method to generate bill
         public void DisplayBill()
         {
             var orderItems = order.MenuItems;
